@@ -175,7 +175,7 @@ window.togglePokedex = function() {
 }
 
 async function startBattleFlow() {
-    await typeWriter("Profile analyzed. IGNIS systems online. Awaiting commands...", dialogueText, 20);
+    await typeWriter("Profile analyzed. MANOJ.OS online. Awaiting commands...", dialogueText, 20);
     
     setTimeout(() => {
         state = 'waiting_action';
@@ -226,7 +226,7 @@ async function useMove(moveKey) {
         'contact': 'RECRUITER SIGNAL'
     };
     
-    await typeWriter(`IGNIS executing protocol: ${moveNames[moveKey]}!`, dialogueText);
+    await typeWriter(`MANOJ executing protocol: ${moveNames[moveKey]}!`, dialogueText);
     
     // Play Animation based on move
     playMoveAnimation(moveKey);
