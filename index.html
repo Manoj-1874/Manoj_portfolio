@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manoj P | Next-Gen Interactive Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nextgen-container">
+        <!-- Deep Void / Cosmic Space Environment -->
+        <div class="cosmic-layer cosmic-bg"></div>
+        <div class="cosmic-layer cosmic-stars-1"></div>
+        <div class="cosmic-layer cosmic-stars-2"></div>
+        <div class="cosmic-layer cosmic-nebula"></div>
+        <div class="cosmic-layer cosmic-portal"></div>
+        <div class="cosmic-layer cosmic-grid"></div>
+
+        <!-- Main Screen Area -->
+        <div class="battle-arena">
+            <!-- Opponent: Corporate Recruiter Mech -->
+            <div class="entity opponent-entity">
+                <div class="mech-shadow"></div>
+                <div class="mech-container" id="opponent-mech">
+                    <svg class="mech-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="mechMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#475569" />
+                                <stop offset="50%" stop-color="#1e293b" />
+                                <stop offset="100%" stop-color="#0f172a" />
+                            </linearGradient>
+                            <linearGradient id="mechAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f43f5e" />
+                                <stop offset="100%" stop-color="#9f1239" />
+                            </linearGradient>
+                            <filter id="neonRed" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="5" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+
+                        <!-- Floating Drones/Shoulder Pads -->
+                        <path class="mech-drone left-drone" d="M 60,100 L 40,80 L 80,70 Z" fill="url(#mechMetal)" stroke="#334155" stroke-width="2" />
+                        <path class="mech-drone right-drone" d="M 240,100 L 260,80 L 220,70 Z" fill="url(#mechMetal)" stroke="#334155" stroke-width="2" />
+
+                        <!-- Core Body -->
+                        <polygon points="110,220 190,220 220,130 150,90 80,130" fill="url(#mechMetal)" stroke="#64748b" stroke-width="3" />
+                        <!-- Core Engine -->
+                        <circle cx="150" cy="160" r="25" fill="#1e293b" stroke="#334155" stroke-width="4" />
+                        <circle cx="150" cy="160" r="15" fill="url(#mechAccent)" filter="url(#neonRed)" class="mech-core-pulse" />
+
+                        <!-- Head / Visor -->
+                        <polygon points="130,85 170,85 160,40 140,40" fill="url(#mechMetal)" stroke="#64748b" stroke-width="2" />
+                        <polygon points="135,70 165,70 160,55 140,55" fill="#000" />
+                        <line x1="140" y1="62" x2="160" y2="62" stroke="#f43f5e" stroke-width="4" filter="url(#neonRed)" class="mech-visor-scan" />
+
+                        <!-- Arms -->
+                        <path class="mech-arm left-arm" d="M 80,130 Q 30,150 40,200 L 60,210 Q 60,160 90,180" fill="url(#mechMetal)" />
+                        <path class="mech-arm right-arm" d="M 220,130 Q 270,150 260,200 L 240,210 Q 240,160 210,180" fill="url(#mechMetal)" />
+
+                        <!-- Floating Base -->
+                        <ellipse cx="150" cy="240" rx="40" ry="10" fill="url(#mechMetal)" />
+                        <path d="M 120,240 L 130,260 L 170,260 L 180,240 Z" fill="url(#mechAccent)" filter="url(#neonRed)" opacity="0.8" class="mech-thruster" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Player: High-Fidelity Cyber Dragon (IGNIS) -->
+            <div class="entity player-entity">
+                <div class="dragon-shadow"></div>
+                <div class="dragon-container" id="player-dragon">
+                    <svg class="dragon-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="dragonArmor" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#0ea5e9" />
+                                <stop offset="50%" stop-color="#3b82f6" />
+                                <stop offset="100%" stop-color="#1d4ed8" />
+                            </linearGradient>
+                            <linearGradient id="dragonBelly" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#020617" />
+                                <stop offset="100%" stop-color="#0f172a" />
+                            </linearGradient>
+                            <linearGradient id="wingMembrane" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9"/>
+                                <stop offset="100%" stop-color="#818cf8" stop-opacity="0.4"/>
+                            </linearGradient>
+                            <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="8" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+
+                        <!-- Energy Aura -->
+                        <ellipse cx="200" cy="220" rx="90" ry="110" fill="#38bdf8" opacity="0.15" filter="url(#cyanGlow)" class="dragon-aura" />
+
+                        <!-- Wings -->
+                        <g class="wing left-wing">
+                            <path d="M 160,180 Q 40,20 20,120 Q 80,100 120,200 Z" fill="url(#wingMembrane)" filter="url(#cyanGlow)" />
+                            <path d="M 160,180 Q 70,60 20,120" stroke="#0ea5e9" stroke-width="4" fill="none" />
+                            <path d="M 140,190 Q 60,100 30,160" stroke="#0ea5e9" stroke-width="2" fill="none" />
+                        </g>
+                        <g class="wing right-wing">
+                            <path d="M 240,180 Q 360,20 380,120 Q 320,100 280,200 Z" fill="url(#wingMembrane)" filter="url(#cyanGlow)" />
+                            <path d="M 240,180 Q 330,60 380,120" stroke="#0ea5e9" stroke-width="4" fill="none" />
+                            <path d="M 260,190 Q 340,100 370,160" stroke="#0ea5e9" stroke-width="2" fill="none" />
+                        </g>
+
+                        <!-- Tail -->
+                        <path class="dragon-tail" d="M 200,280 Q 300,320 280,380 Q 340,340 200,300" fill="url(#dragonArmor)" stroke="#1e3a8a" stroke-width="2" />
+                        <polygon class="tail-spike" points="280,380 290,360 310,370" fill="#38bdf8" filter="url(#cyanGlow)" />
+
+                        <!-- Body -->
+                        <path d="M 150,150 Q 200,280 250,150 Q 250,320 150,320 Z" fill="url(#dragonBelly)" />
+                        <path d="M 140,140 Q 200,180 260,140 Q 280,280 200,300 Q 120,280 140,140 Z" fill="url(#dragonArmor)" stroke="#1e3a8a" stroke-width="3" />
+
+                        <!-- Chest Core -->
+                        <polygon points="200,190 220,220 200,250 180,220" fill="#fff" filter="url(#cyanGlow)" class="dragon-core" />
+
+                        <!-- Neck & Head -->
+                        <path class="dragon-neck" d="M 180,160 Q 200,80 180,50 L 220,50 Q 200,80 220,160 Z" fill="url(#dragonArmor)" />
+
+                        <g class="dragon-head">
+                            <polygon points="160,50 240,50 220,10 180,10" fill="url(#dragonArmor)" stroke="#1e3a8a" stroke-width="2" />
+                            <polygon points="170,50 200,90 230,50" fill="url(#dragonArmor)" />
+
+                            <!-- Horns -->
+                            <path d="M 180,15 Q 150,-20 130,-10 Q 160,0 170,25" fill="#38bdf8" filter="url(#cyanGlow)" />
+                            <path d="M 220,15 Q 250,-20 270,-10 Q 240,0 230,25" fill="#38bdf8" filter="url(#cyanGlow)" />
+
+                            <!-- Eyes -->
+                            <polygon points="175,40 190,45 180,35" fill="#fff" filter="url(#cyanGlow)" class="dragon-eye" />
+                            <polygon points="225,40 210,45 220,35" fill="#fff" filter="url(#cyanGlow)" class="dragon-eye" />
+                        </g>
+
+                        <!-- Arms / Claws -->
+                        <path class="dragon-arm left-arm" d="M 150,200 Q 100,240 120,280" stroke="url(#dragonArmor)" stroke-width="15" stroke-linecap="round" fill="none" />
+                        <path class="dragon-arm right-arm" d="M 250,200 Q 300,240 280,280" stroke="url(#dragonArmor)" stroke-width="15" stroke-linecap="round" fill="none" />
+                        <polygon points="110,280 120,295 130,280" fill="#38bdf8" />
+                        <polygon points="270,280 280,295 290,280" fill="#38bdf8" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- High-Tech HUDs -->
+        <div class="hud-glass opponent-hud">
+            <div class="hud-header">
+                <span class="hud-name">RECRUITER // MECH-99</span>
+                <span class="hud-level">LVL: ??</span>
+            </div>
+            <div class="hp-bar-tech">
+                <div class="hp-fill-tech target-hp"></div>
+                <div class="hp-glow target-hp-glow"></div>
+            </div>
+            <div class="hud-stats">
+                <span>SYSTEM INTEGRITY</span>
+                <span id="target-hp-val">100%</span>
+            </div>
+        </div>
+
+        <div class="hud-glass player-hud">
+            <div class="hud-header">
+                <span class="hud-name">IGNIS // MANOJ.OS v5</span>
+                <span class="hud-level">LVL: MAX</span>
+            </div>
+            <div class="hp-bar-tech">
+                <div class="hp-fill-tech player-hp"></div>
+                <div class="hp-glow player-hp-glow"></div>
+            </div>
+            <div class="hud-stats">
+                <span>MANA STAMINA</span>
+                <span>999 / 999</span>
+            </div>
+            <div class="exp-track">
+                <div class="exp-fill"></div>
+            </div>
+        </div>
+
+        <!-- Modern Action Interface -->
+        <div class="interface-container" id="interface-container">
+            <div class="dialogue-panel glass-panel" id="dialogue-box">
+                <div class="dialogue-content">
+                    <div class="dialogue-avatar">
+                        <i class="fa-solid fa-dragon"></i>
+                    </div>
+                    <div class="dialogue-text" id="dialogue-text">
+                        A wild RECRUITER MECH engages! IGNIS is ready.
+                    </div>
+                </div>
+                <div class="dialogue-indicator"><i class="fa-solid fa-caret-down"></i></div>
+            </div>
+
+            <div class="command-grid hidden" id="battle-menu">
+                <button class="cmd-btn type-cyber" onclick="useMove('api')" data-sound="hover">
+                    <div class="cmd-bg"></div>
+                    <div class="cmd-content">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <span class="cmd-name">REST API BEAM</span>
+                        <span class="cmd-meta">NODE.JS / MONGODB</span>
+                    </div>
+                </button>
+                <button class="cmd-btn type-void" onclick="useMove('ai')">
+                    <div class="cmd-bg"></div>
+                    <div class="cmd-content">
+                        <i class="fa-solid fa-microscope"></i>
+                        <span class="cmd-name">MEDICAL AI WGAN</span>
+                        <span class="cmd-meta">PYTORCH / OPENCV</span>
+                    </div>
+                </button>
+                <button class="cmd-btn type-plasma" onclick="useMove('java')">
+                    <div class="cmd-bg"></div>
+                    <div class="cmd-content">
+                        <i class="fa-brands fa-java"></i>
+                        <span class="cmd-name">OCP JAVA FLARE</span>
+                        <span class="cmd-meta">JAVA 17 LTS</span>
+                    </div>
+                </button>
+                <button class="cmd-btn type-quantum" onclick="useMove('stats')">
+                    <div class="cmd-bg"></div>
+                    <div class="cmd-content">
+                        <i class="fa-solid fa-trophy"></i>
+                        <span class="cmd-name">ACHIEVEMENT BURST</span>
+                        <span class="cmd-meta">TOP 10 FINALIST</span>
+                    </div>
+                </button>
+                <button class="cmd-btn type-arch" onclick="useMove('arch')">
+                    <div class="cmd-bg"></div>
+                    <div class="cmd-content">
+                        <i class="fa-solid fa-sitemap"></i>
+                        <span class="cmd-name">CORE ARCHITECTURE</span>
+                        <span class="cmd-meta">SYSTEM DESIGN</span>
+                    </div>
+                </button>
+                <button class="cmd-btn type-contact" onclick="useMove('contact')">
+                    <div class="cmd-bg"></div>
+                    <div class="cmd-content">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                        <span class="cmd-name">RECRUITER SIGNAL</span>
+                        <span class="cmd-meta">HIRE ME NOW</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Cinematic Overlay for Content Reveal -->
+        <div id="content-overlay" class="cinema-overlay hidden">
+            <div class="cinema-backdrop"></div>
+            <div class="cinema-content-wrapper">
+                <div class="cinema-header">
+                    <div class="cinema-brand">
+                        <i class="fa-solid fa-database text-cyan"></i> SYSTEM DATA EXTRACTED
+                    </div>
+                    <button class="btn-close-cinema" onclick="closeOverlay()">
+                        <i class="fa-solid fa-xmark"></i> ESCAPE
+                    </button>
+                </div>
+                <div class="cinema-body" id="overlay-content">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Pokedex Button -->
+        <button class="pokedex-btn glass-panel" onclick="togglePokedex()">
+            <i class="fa-solid fa-tablet-screen-button"></i> POKÉDEX
+        </button>
+
+        <!-- Pokedex Overlay -->
+        <div id="pokedex-overlay" class="pokedex-overlay hidden">
+            <div class="pokedex-panel glass-panel">
+                <button class="pokedex-close" onclick="togglePokedex()"><i class="fa-solid fa-xmark"></i></button>
+                <div class="pokedex-header">
+                    <div class="pokedex-avatar">
+                        <img src="profile.png" alt="Manoj P" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <div class="pokedex-title">
+                        <h3>MANOJ P</h3>
+                        <span class="pokedex-role">Full Stack & AI Developer</span>
+                    </div>
+                </div>
+                <div class="pokedex-body">
+                    <p class="pokedex-summary">Motivated Backend Developer and Engineering student skilled in Node.js, Python, and MongoDB. Experienced in architecting role-based enterprise workflows and integrating Generative AI models.</p>
+                    <div class="pokedex-links">
+                        <a href="mailto:manojpalanisamy515@gmail.com" class="poke-link"><i class="fa-solid fa-envelope"></i> manojpalanisamy515@gmail.com</a>
+                        <a href="tel:+919514374431" class="poke-link"><i class="fa-solid fa-phone"></i> +91 9514374431</a>
+                        <a href="https://linkedin.com/in/manoj-p-a14913291" target="_blank" class="poke-link"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/Manoj-1874" target="_blank" class="poke-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                    <div class="pokedex-skills">
+                        <h4>Technical Skills</h4>
+                        <div class="poke-tags">
+                            <span class="poke-tag">JavaScript</span>
+                            <span class="poke-tag">Python</span>
+                            <span class="poke-tag">Java</span>
+                            <span class="poke-tag">Node.js</span>
+                            <span class="poke-tag">MongoDB</span>
+                            <span class="poke-tag">SQL</span>
+                            <span class="poke-tag">RESTful APIs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FX Layer -->
+        <div id="fx-layer" class="fx-layer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
